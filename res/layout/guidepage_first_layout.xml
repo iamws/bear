@@ -6,21 +6,31 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center" >
+
         <ImageView
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/guide_time_back" />
-        
+
         <ImageView
-            android:layout_centerInParent="true"
+            android:id="@+id/guidepage_first_hour_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/guide_time_point" />
-    </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/guidepage_first_minute_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/guide_time_point" />
+    </FrameLayout>
 
 </LinearLayout>
