@@ -6,31 +6,39 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <FrameLayout
+    <RelativeLayout
+        android:layout_weight="1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center" >
+        android:layout_height="wrap_content" >
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:src="@drawable/guide_time_back" />
 
         <ImageView
             android:id="@+id/guidepage_first_hour_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:src="@drawable/guide_time_point" />
 
         <ImageView
             android:id="@+id/guidepage_first_minute_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:src="@drawable/guide_time_point" />
-    </FrameLayout>
+    </RelativeLayout>
+    
+     <Button
+            android:layout_alignTop="@id/guidepage_first_minute_point"
+            android:visibility="invisible"
+            android:id="@+id/guidepage_first_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dip"
+            android:text="鱼鱼抓紧时间学习" />
 
 </LinearLayout>
