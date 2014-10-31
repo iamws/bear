@@ -7,11 +7,12 @@
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:layout_weight="1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="0dip"
+        android:layout_weight="1" >
 
         <ImageView
+            android:id="@+id/guidepage_first_pic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -30,15 +31,22 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:src="@drawable/guide_time_point" />
-    </RelativeLayout>
-    
-     <Button
-            android:layout_alignTop="@id/guidepage_first_minute_point"
-            android:visibility="invisible"
-            android:id="@+id/guidepage_first_click"
+
+        <ImageView
+            android:id="@+id/guidepage_first_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dip"
-            android:text="鱼鱼抓紧时间学习" />
+            android:layout_below="@id/guidepage_first_pic"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dip"
+            android:src="@drawable/guide_first_time_fly" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/guidepage_first_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:src="@drawable/guide_common_next" />
 
 </LinearLayout>
