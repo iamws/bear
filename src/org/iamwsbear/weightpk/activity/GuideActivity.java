@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
@@ -29,9 +30,9 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 
 	private List<View> list = new ArrayList<View>();
 
-	private Animation clockHourAnimal, clockMinuteAnimal, commonNextAnimal, textAlphaAnimal;
+	private Animation clockHourAnimal, clockMinuteAnimal, commonNextAnimal, textAlphaAnimal, commRightAnimal, commLeftAnimal, chapterAnimal;
 
-	private ImageView clockHourPoint, clockMinutePoint, firstNext, fristText;
+	private ImageView clockHourPoint, clockMinutePoint, firstNext, fristText, secondDog, secondCat, secondImport, secondNext, secondSuperise, secondChapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +47,23 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 
 	@SuppressLint({ "InflateParams", "HandlerLeak" })
 	private void initView() {
-		View firstGuide = LayoutInflater.from(this).inflate(
+		View firstGuideView = LayoutInflater.from(this).inflate(
 				R.layout.guidepage_first_layout, null);
-		list.add(firstGuide);
-		clockHourPoint = (ImageView) firstGuide
+		clockHourPoint = (ImageView) firstGuideView
 				.findViewById(R.id.guidepage_first_hour_point);
-		clockMinutePoint = (ImageView) firstGuide
+		clockMinutePoint = (ImageView) firstGuideView
 				.findViewById(R.id.guidepage_first_minute_point);
-		firstNext = (ImageView) firstGuide.findViewById(R.id.guidepage_first_next);
-		fristText = (ImageView) firstGuide.findViewById(R.id.guidepage_first_text);
-
+		firstNext = (ImageView) firstGuideView.findViewById(R.id.guidepage_first_next);
+		fristText = (ImageView) firstGuideView.findViewById(R.id.guidepage_first_text);
+		View secondGuideView = LayoutInflater.from(this).inflate(
+				R.layout.guidepage_second_layout, null);
+		secondDog = (ImageView) secondGuideView.findViewById(R.id.guidepage_second_dog);
+		secondCat = (ImageView) secondGuideView.findViewById(R.id.guidepage_second_miao);
+		secondImport =(ImageView) secondGuideView.findViewById(R.id.guidepage_second_coming);
+		secondNext =(ImageView) secondGuideView.findViewById(R.id.guidepage_second_next);
+		secondSuperise =(ImageView) secondGuideView.findViewById(R.id.guidepage_second_suprise);
+		list.add(firstGuideView);
+		list.add(secondGuideView);
 	}
 
 	private void initAnimal() {
@@ -65,12 +73,56 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 				R.anim.animal_circle_minute_scale);
 		commonNextAnimal = AnimationUtils.loadAnimation(GuideActivity.this, R.anim.animal_bottom_next);
 		textAlphaAnimal = AnimationUtils.loadAnimation(GuideActivity.this, R.anim.animal_common_text_alpha);
+		commLeftAnimal = AnimationUtils.loadAnimation(GuideActivity.this, R.anim.animal_pic_left);
+		commRightAnimal = AnimationUtils.loadAnimation(GuideActivity.this, R.anim.animal_pic_right);
+		chapterAnimal = AnimationUtils.loadAnimation(GuideActivity.this, R.anim.animal_chapter);
+		commLeftAnimal.setAnimationListener(new AnimationListener() {
+			
+			@Override
+			public void onAnimationStart(Animation animation) {
+				
+			}
+			
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				
+			}
+			
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				secondDog.setVisibility(View.GONE);
+				secondCat.setVisibility(View.VISIBLE);
+				secondCat.startAnimation(commRightAnimal);
+			}
+		});
+		commRightAnimal.setAnimationListener(new AnimationListener() {
+			
+			@Override
+			public void onAnimationStart(Animation animation) {
+				
+			}
+			
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				
+			}
+			
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				secondCat.setVisibility(View.GONE);
+				secondSuperise.setVisibility(View.VISIBLE);
+				secondImport.setVisibility(View.VISIBLE);
+				secondImport.startAnimation(chapterAnimal);
+			}
+		});
 	}
 
 	private void initAdapter() {
 		viewPager = (ViewPager) findViewById(R.id.main_viewpager);
 		adapter = new VerticalPagerAdapter(list);
 		viewPager.setAdapter(adapter);
+		viewPager.setOnPageChangeListener(this);
+		viewPager.setOffscreenPageLimit(0);
 	}
 
 	private void initDo() {
@@ -100,8 +152,11 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 			clockMinutePoint.startAnimation(clockMinuteAnimal);
 			firstNext.startAnimation(commonNextAnimal);
 			fristText.startAnimation(textAlphaAnimal);
+			secondSuperise.setVisibility(View.INVISIBLE);
 			break;
 		case 1:
+			secondNext.startAnimation(commonNextAnimal);
+			secondDog.startAnimation(commLeftAnimal);
 			break;
 		case 2:
 			break;
