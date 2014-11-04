@@ -39,8 +39,7 @@
             android:id="@+id/guidepage_second_coming"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/guidepage_second_suprise"
+             android:layout_centerInParent="true"
             android:src="@drawable/guide_second_import"
             android:visibility="invisible" />
 

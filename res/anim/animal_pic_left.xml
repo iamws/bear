@@ -5,12 +5,12 @@
     <scale
         android:duration="2000"
         android:fillAfter="true"
-        android:fromXScale="0.5"
-        android:fromYScale="0.5"
+        android:fromXScale="0.3"
+        android:fromYScale="0.3"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:toXScale="1.2"
-        android:toYScale="1.2" />
+        android:toXScale="0.8"
+        android:toYScale="0.8" />
 
     <set android:startOffset="2000" >
         <translate
