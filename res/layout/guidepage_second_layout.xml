@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guidepage_second_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
@@ -36,28 +37,32 @@
             android:visibility="invisible" />
 
         <ImageView
-            android:id="@+id/guidepage_second_coming"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             android:layout_centerInParent="true"
-            android:src="@drawable/guide_second_import"
-            android:visibility="invisible" />
-
-        <ImageView
             android:id="@+id/guidepage_second_chapter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/guidepage_second_suprise"
             android:layout_centerInParent="true"
+            android:layout_gravity="center"
             android:layout_marginTop="40dip"
-            android:src="@drawable/guide_second_chapter" />
+            android:src="@drawable/guide_second_chapter"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/guidepage_second_coming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/guidepage_second_suprise"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="40dip"
+            android:src="@drawable/guide_second_import"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/guidepage_second_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dip"
+        android:layout_marginBottom="30dip"
         android:src="@drawable/guide_common_next" />
 
 </LinearLayout>

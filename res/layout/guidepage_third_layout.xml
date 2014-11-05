@@ -6,47 +6,45 @@
     android:gravity="center"
     android:orientation="vertical" >
 
+    <ImageView
+        android:id="@+id/guidepage_second_next"
+        android:layout_width="wrap_content"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_gravity="bottom|center_horizontal"
+        android:src="@drawable/guide_third_global" />
+
     <RelativeLayout
+        android:id="@+id/guidepage_third_page_one"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:layout_weight="1" >
+        android:layout_weight="5" >
 
         <ImageView
-            android:id="@+id/guidepage_first_pic"
+            android:id="@+id/guidepage_third_earth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/guide_time_back" />
+            android:src="@drawable/guide_third_earth" />
 
         <ImageView
-            android:id="@+id/guidepage_first_hour_point"
+            android:id="@+id/guidepage_third_weixin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/guide_time_point" />
+            android:layout_above="@id/guidepage_third_earth"
+            android:src="@drawable/guide_third_weixin" />
 
         <ImageView
-            android:id="@+id/guidepage_first_minute_point"
+            android:id="@+id/guidepage_third_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/guide_time_point" />
-
-        <ImageView
-            android:id="@+id/guidepage_first_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/guidepage_first_pic"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dip"
-            android:src="@drawable/guide_first_time_fly" />
+            android:layout_alignParentBottom="true"
+            android:background="#123456" />
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/guidepage_first_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dip"
         android:src="@drawable/guide_common_next" />
 
 </LinearLayout>
