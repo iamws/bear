@@ -124,14 +124,14 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 			public void onAnimationEnd(Animation animation) {
 				secondCat.setVisibility(View.GONE);
 				secondImport.startAnimation(chapterDownAnimal);
-				secondImport.setVisibility(View.VISIBLE);
+				
 			}
 		});
 		chapterDownAnimal.setAnimationListener(new AnimationListener() {
 			
 			@Override
 			public void onAnimationStart(Animation animation) {
-				
+				secondImport.setVisibility(View.VISIBLE);
 			}
 			
 			@Override
@@ -224,6 +224,8 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 			secondSuperise.setVisibility(View.INVISIBLE);
 			break;
 		case 1:
+			secondSuperise.clearAnimation();
+			secondImport.clearAnimation();
 			secondNext.startAnimation(commonNextAnimal);
 			secondDog.startAnimation(commLeftAnimal);
 			break;

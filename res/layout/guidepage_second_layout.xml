@@ -55,7 +55,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="40dip"
             android:src="@drawable/guide_second_import"
-            android:visibility="gone" />
+            android:visibility="invisible" />
     </RelativeLayout>
 
     <ImageView
