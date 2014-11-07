@@ -8,6 +8,7 @@ import org.iamwsbear.weightpk.adapter.VerticalPagerAdapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +34,7 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 
 	private Animation clockHourAnimal, clockMinuteAnimal, commonNextAnimal, textAlphaAnimal, commRightAnimal, commLeftAnimal, chapterDownAnimal, chapterUpAnimal, commAlphaAnimal, vibratorAnimal, weixinAnimal;
 
-	private ImageView clockHourPoint, clockMinutePoint, firstNext, fristText, secondDog, secondCat, secondImport, secondNext, secondSuperise, secondChapter, thirdWeixinImg;
+	private ImageView clockHourPoint, clockMinutePoint, firstNext, fristText, secondDog, secondCat, secondImport, secondNext, secondSuperise, secondChapter, thirdWeixinImg, thirdNext;
 	
 	private LinearLayout secondMainLayout;
 
@@ -70,6 +71,7 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 		View thirdGuideView = LayoutInflater.from(this).inflate(
 				R.layout.guidepage_third_layout, null);
 		thirdWeixinImg =(ImageView) thirdGuideView.findViewById(R.id.guidepage_third_weixin);
+		thirdNext =(ImageView) thirdGuideView.findViewById(R.id.guidepage_third_next);
 		list.add(firstGuideView);
 		list.add(secondGuideView);
 		list.add(thirdGuideView);
@@ -226,6 +228,11 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 		case 1:
 			secondSuperise.clearAnimation();
 			secondImport.clearAnimation();
+			secondImport.setVisibility(View.INVISIBLE);
+			secondChapter.setVisibility(View.INVISIBLE);
+			secondSuperise.setVisibility(View.INVISIBLE);
+			secondSuperise.clearAnimation();
+			secondImport.clearAnimation();
 			secondNext.startAnimation(commonNextAnimal);
 			secondDog.startAnimation(commLeftAnimal);
 			break;
@@ -235,7 +242,10 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
 			secondImport.setVisibility(View.INVISIBLE);
 			secondChapter.setVisibility(View.INVISIBLE);
 			secondSuperise.setVisibility(View.INVISIBLE);
+			thirdWeixinImg.setImageResource(R.drawable.animallist_weixin);
+			((AnimationDrawable) thirdWeixinImg.getDrawable()).start();
 			thirdWeixinImg.startAnimation(weixinAnimal);
+			thirdNext.startAnimation(commonNextAnimal);
 			break;
 		}
 	}
