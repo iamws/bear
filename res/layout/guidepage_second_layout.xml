@@ -13,20 +13,12 @@
         android:layout_weight="1" >
 
         <ImageView
-            android:id="@+id/guidepage_second_dog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/guide_second_dog"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/guidepage_second_miao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/guide_second_miao"
-            android:visibility="invisible" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dip"
+            android:src="@drawable/guide_second_text" />
 
         <ImageView
             android:id="@+id/guidepage_second_suprise"
