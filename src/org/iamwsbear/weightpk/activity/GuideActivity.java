@@ -193,13 +193,6 @@ public class GuideActivity extends Activity implements OnPageChangeListener,
         adapter = new VerticalPagerAdapter(list);
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(this);
-//        try {
-//            Field it = viewPager.getClass().getDeclaredField("DEFAULT_OFFSCREEN_PAGES");
-//            it.setAccessible(true);
-//            it.setInt(viewPager, 0);
-//        } catch (Exception e) {
-//            Log.e("iamwsbear", e.getMessage());
-//        }
     }
 
     private void initDo() {
